@@ -1,0 +1,102 @@
+note: Generated from recorded traffic using edge 145.0.3800.70
+configuration:
+  profile: edge
+  vars:
+    APP_SofyTestDemo_URL:
+      expr: https://testhub.sbx0240.play.hclsofy.dev/test/
+      type: val
+      modifier: in
+    Username:
+      expr: demo.user
+      type: val
+      modifier: in
+    Password:
+      expr: 7b6999644df38324a39cf1e9e444a7c070ba1c385a900dc691039f80a6e99563
+      modifier: in
+    LiContract:
+      expr: 'false'
+      type: val
+      modifier: in
+steps:
+  - open:
+      note: Open SofyTestDemo
+      url: '${APP_SofyTestDemo_URL}'
+  - with:
+      note: Sign in to platform
+      steps:
+        - click:
+            shot: Sign in to platform_ri54h5.dti.jpeg#48
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Username
+        - type:
+            shot: Sign in to platform_kkkiwe.dti.jpeg#86
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Username
+            value: '${Username}'
+        - click:
+            shot: Sign in to platform_ikn3xu.dti.jpeg#165
+            object: html.inputpassword
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Password
+        - type:
+            shot: Sign in to platform_yk6brw.dti.jpeg#203
+            object: html.inputpassword
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Password
+            value: '${Password}'
+        - click:
+            shot: Sign in to platform_d7bobt.dti.jpeg#286
+            object: html.button
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Sign In
+  - with:
+      note: DevOps Test Hub - Initial - Team Space Dashboard
+      steps:
+        - pause: 10000ms
+        - assign:
+            shot: DevOps Test Hub - Initial - Team Space Dashboard_jmiav4.dti.jpeg#354
+            object: html.body
+            identifiers:
+              - properties:
+                  - title:
+                      - val: DevOps Test Hub - Initial - Team Space Dashboard
+            properties:
+              - content:
+                  - var: LiContract
+        - if:
+            condition: LiContract.includes('Third Party License Agreements')
+            steps:
+              - click:
+                  shot: DevOps Test Hub - Initial - Team Space Dashboard_g4ljl2.dti.jpeg#169
+                  object: html.inputcheckbox
+                  identifiers:
+                    - properties:
+                        - label:
+                            - val: Google ChromeGoogle Terms of ServiceChrome and
+                                ChromeOS Additional Terms of Service
+              - click:
+                  shot: DevOps Test Hub - Initial - Team Space Dashboard_jmiav4.dti.jpeg#354
+                  object: html.inputcheckbox
+                  identifiers:
+                    - properties:
+                        - label:
+                            - val: Microsoft EdgeMicrosoft Software License Terms
+              - click:
+                  shot: DevOps Test Hub - Initial - Team Space Dashboard_k6y4aa.dti.jpeg#545
+                  object: html.span
+                  identifiers:
+                    - properties:
+                        - content:
+                            - val: Save

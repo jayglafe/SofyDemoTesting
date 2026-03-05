@@ -1,0 +1,283 @@
+note: Generated from recorded traffic using edge 145.0.3800.82
+configuration:
+  profile: edge
+  vars:
+    APP_SofyTestDemo_URL: https://testhub.sbx0240.play.hclsofy.dev/test
+    Username:
+      expr: demo.user
+      type: val
+      modifier: in
+    Password:
+      expr: 7b6999644df38324a39cf1e9e444a7c070ba1c385a900dc691039f80a6e99563
+      type: val
+      modifier: in
+    Name:
+      expr: hostname
+      type: val
+      modifier: in
+    Value:
+      expr: commerce-preview.sbx0240.play.hclsofy.dev
+      type: val
+      modifier: in
+    Name_2:
+      expr: port_num
+      type: val
+      modifier: in
+    Value_3:
+      expr: '443'
+      type: val
+      modifier: in
+    Done:
+      expr: UnInitialized
+      type: val
+      modifier: in
+steps:
+  - open:
+      enabled: 'false'
+      note: Open SofyTestDemo
+      url: '${APP_SofyTestDemo_URL}'
+  - with:
+      enabled: 'false'
+      note: Sign in to platform
+      steps:
+        - click:
+            shot: Sign in to platform_xp2upe.dti.jpeg#48
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Username
+        - type:
+            shot: Sign in to platform_zpr2cy.dti.jpeg#86
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Username
+            value: '${Username}'
+        - click:
+            shot: Sign in to platform_fmuzzh.dti.jpeg#165
+            object: html.inputpassword
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Password
+        - type:
+            shot: Sign in to platform_j6jiuh.dti.jpeg#203
+            object: html.inputpassword
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Password
+            value: '${Password}'
+        - click:
+            shot: Sign in to platform_n6vgtz.dti.jpeg#286
+            object: html.button
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Sign In
+  - with:
+      note: DevOps Test Hub - Initial - Team Space Dashboard
+      steps:
+        - click:
+            shot: DevOps Test Hub - Initial - Team Space Dashboard_pe33lj.dti.jpeg#43
+            object: html.img
+            identifiers:
+              - properties:
+                  - src:
+                      - val: content/images/banner-brand-icon-3.svg
+        - click:
+            shot: DevOps Test Hub - Initial - Team Space Dashboard_43iqlm.dti.jpeg#322
+            object: html.span
+            identifiers:
+              - properties:
+                  - content:
+                      - val: TestProject
+  - with:
+      note: DevOps Test Hub - 1150 - Overview
+      steps:
+        - click:
+            shot: DevOps Test Hub - 1150 - Overview_ajdpnt.dti.jpeg#457
+            object: html.div
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Execute
+                locators:
+                  - leftof:
+                      object: html.label
+                      properties:
+                        - content:
+                            - val: Execution results
+  - with:
+      note: DevOps Test Hub - TestProject - Execution
+      steps:
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_lxs5fl.dti.jpeg#929
+            object: html.button
+            identifiers:
+              - properties:
+                  - aria-label:
+                      - val: 'Open execution dialog for: Register Users & Add Address'
+                locators:
+                  - inside:
+                      object: html.td
+                      properties:
+                        - position:
+                            - val: '7 : 5'
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_sems24.dti.jpeg#1392
+            object: html.span
+            identifiers:
+              - properties:
+                  - content:
+                      - val: VARIABLES
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_3x2ob5.dti.jpeg#1880
+            object: html.span
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Add Variable
+        - type:
+            shot: DevOps Test Hub - TestProject - Execution_7ub56u.dti.jpeg#2400
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Name
+            value: '${Name}'
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_pghvht.dti.jpeg#3387
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Value
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_sv4e6h.dti.jpeg#3879
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Value
+        - type:
+            shot: DevOps Test Hub - TestProject - Execution_of2gw5.dti.jpeg#4371
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Value
+            value: '${Value}'
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_xll72y.dti.jpeg#5362
+            object: html.button
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Add
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_gnchj4.dti.jpeg#5793
+            object: html.span
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Add Variable
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_lqgbf3.dti.jpeg#6345
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Name
+        - type:
+            shot: DevOps Test Hub - TestProject - Execution_gkrm6z.dti.jpeg#6853
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Name
+            value: '${Name_2}'
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_cgpnsf.dti.jpeg#7872
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Value
+        - type:
+            shot: DevOps Test Hub - TestProject - Execution_wsc537.dti.jpeg#8380
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Value
+            value: '${Value_3}'
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_r5544r.dti.jpeg#9402
+            object: html.span
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Add
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_yd2cxg.dti.jpeg#9897
+            object: html.span
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Execute
+        - do:
+            steps:
+              - pause: 10000ms
+              - assign:
+                  shot: DevOps Test Hub - TestProject - Execution_lwqv55.dti.jpeg#10005
+                  object: html.td
+                  identifiers:
+                    - properties:
+                        - position:
+                            - val: '5 : 5'
+                  properties:
+                    - content:
+                        - var: Done
+            while: Done != 'Pass' && Done != 'Error'
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_lwqv55.dti.jpeg#10005
+            object: html.div
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Analyze
+                locators:
+                  - position: '3'
+  - with:
+      note: DevOps Test Hub - TestProject - Results
+      steps:
+        - click:
+            shot: DevOps Test Hub - TestProject - Results_e3nvmd.dti.jpeg#10515
+            object: html.a
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Register Users & Add Address
+        - click:
+            shot: DevOps Test Hub - TestProject - Results_evdbio.dti.jpeg#10921
+            object: html.svg
+            identifiers:
+              - properties:
+                  - fill:
+                      - val: none
+                locators:
+                  - below:
+                      object: html.div
+                      properties:
+                        - id:
+                            - val: account-menu
+        - click:
+            shot: DevOps Test Hub - TestProject - Results_fqyrgp.dti.jpeg#11079
+            object: html.img
+            identifiers:
+              - properties:
+                  - src:
+                      - val: content/images/banner-brand-icon-3.svg

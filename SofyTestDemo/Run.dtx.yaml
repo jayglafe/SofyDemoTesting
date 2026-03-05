@@ -1,0 +1,14 @@
+configuration:
+  vars:
+    gPrometheusIp: ''
+steps:
+  - run: asset://github.com%2Fjayglafe%2FSofyDemoTesting/SofyConsole/SofyConsoleHealthCheck.dtx.yaml
+  - assign:
+      enabled: 'false'
+      vars:
+        gPrometheusIp: ''
+  - log:
+      enabled: 'false'
+  - run: Login.dtx.yaml
+  - run: NewProject.dtx.yaml
+  - run: RunFirstTest.dtx.yaml

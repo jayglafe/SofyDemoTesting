@@ -1,0 +1,145 @@
+note: Generated from recorded traffic using edge 145.0.3800.82
+configuration:
+  profile: edge
+  vars:
+    APP_SofyConsole_URL: https://testhub.sbx0213.play.hclsofy.dev/test/
+    Username: demo.user
+    Password: c3157dd6906fb0b8cf06017930cc92bdcbaa41bbfd9fda8627fbf8562b4d3a53
+    Name: TestProject
+    Git_URL: https://github.com/HCL-TECH-SOFTWARE/Emerald-One-Test-Studio-Tests.git
+    Username_2: jayglafe
+steps:
+  - open:
+      enabled: 'false'
+      note: Open SofyConsole
+      url: '${APP_SofyConsole_URL}'
+  - with:
+      enabled: 'false'
+      note: Sign in to platform
+      steps:
+        - click:
+            shot: ../SofyConsole/Sign in to platform_uhdis6.dti.jpeg#48
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Username
+        - type:
+            shot: ../SofyConsole/Sign in to platform_lsejvq.dti.jpeg#86
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Username
+            value: '${Username}'
+        - click:
+            shot: ../SofyConsole/Sign in to platform_bgwn7o.dti.jpeg#165
+            object: html.inputpassword
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Password
+        - type:
+            shot: ../SofyConsole/Sign in to platform_z2caul.dti.jpeg#203
+            object: html.inputpassword
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Password
+            value: '${Password}'
+        - click:
+            shot: ../SofyConsole/Sign in to platform_hxbzef.dti.jpeg#286
+            object: html.button
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Sign In
+  - with:
+      note: DevOps Test Hub - Initial - Team Space Dashboard
+      steps:
+        - click:
+            shot: ../SofyConsole/DevOps Test Hub - Initial - Team Space Dashboard_2ujnwx.dti.jpeg#144
+            object: html.span
+            identifiers:
+              - properties:
+                  - content:
+                      - val: New Project
+                locators:
+                  - inside:
+                      object: html.button
+                      properties:
+                        - content:
+                            - val: New Project
+        - click:
+            shot: ../SofyConsole/DevOps Test Hub - Initial - Team Space Dashboard_4e5hhc.dti.jpeg#307
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Name
+        - type:
+            shot: ../SofyConsole/DevOps Test Hub - Initial - Team Space Dashboard_r655bd.dti.jpeg#466
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Name
+            value: '${Name}'
+        - press:
+            enabled: 'false'
+            shot: ../SofyConsole/DevOps Test Hub - Initial - Team Space Dashboard_7rexc7.dti.jpeg#784
+            key: enter
+        - click:
+            shot: ../SofyConsole/DevOps Test Hub - Initial - Team Space Dashboard_7rexc7.dti.jpeg#784
+            object: html.span
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Create
+  - with:
+      note: DevOps Test Hub
+      steps:
+        - click:
+            shot: ../SofyConsole/DevOps Test Hub_ej44sv.dti.jpeg#958
+            object: html.span
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Add Repository
+        - click:
+            shot: ../SofyConsole/DevOps Test Hub_6bpoos.dti.jpeg#1253
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Git URL
+        - type:
+            shot: ../DevOps Test Hub_c5w6o2.dti.jpeg#1519
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Git URL
+            value: '${Git_URL}'
+        - click:
+            shot: ../SofyConsole/DevOps Test Hub_lnkhgw.dti.jpeg#2054
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Username
+        - type:
+            shot: ../SofyConsole/DevOps Test Hub_jlf6jv.dti.jpeg#2318
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Username
+            value: '${Username_2}'
+        - click:
+            shot: ../SofyConsole/DevOps Test Hub_cpna3x.dti.jpeg#2864
+            object: html.button
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Add
