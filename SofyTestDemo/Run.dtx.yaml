@@ -11,5 +11,7 @@ steps:
       enabled: 'false'
   - run: Login.dtx.yaml
   - run: NewProject.dtx.yaml
+  - run: SetDevBranch.dtx.yaml
   - run: RunFirstTest.dtx.yaml
   - run: RunAPITests.dtx.yaml
+  - run: RunPostmanTest.dtx.yaml

@@ -1,0 +1,235 @@
+note: Generated from recorded traffic using edge 145.0.3800.82
+configuration:
+  profile: edge
+  vars:
+    APP_SofyTestDemo_URL: https://testhub.sbx0240.play.hclsofy.dev/test/
+    Username: demo.user
+    Password: 7b6999644df38324a39cf1e9e444a7c070ba1c385a900dc691039f80a6e99563
+    Git_URL: https://github.com/HCL-TECH-SOFTWARE/Emerald-Other-Tests
+    Username_2: jayglafe
+    Program_Arguments: --insecure
+    Done: Uninitialized
+steps:
+  - open:
+      enabled: 'false'
+      note: Open SofyTestDemo
+      url: '${APP_SofyTestDemo_URL}'
+  - with:
+      enabled: 'false'
+      note: Sign in to platform
+      steps:
+        - click:
+            shot: Sign in to platform_eank7k.dti.jpeg#48
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Username
+        - type:
+            shot: Sign in to platform_pijm4m.dti.jpeg#86
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Username
+            value: '${Username}'
+        - click:
+            shot: Sign in to platform_lcm3qw.dti.jpeg#165
+            object: html.inputpassword
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Password
+        - click:
+            shot: Sign in to platform_rslgok.dti.jpeg#203
+            object: html.inputpassword
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Password
+        - type:
+            shot: Sign in to platform_hapnyt.dti.jpeg#241
+            object: html.inputpassword
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Password
+            value: '${Password}'
+        - click:
+            shot: Sign in to platform_3uisdb.dti.jpeg#324
+            object: html.button
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Sign In
+  - with:
+      note: DevOps Test Hub - Initial - Team Space Dashboard
+      steps:
+        - click:
+            shot: DevOps Test Hub - Initial - Team Space Dashboard_6oufhg.dti.jpeg#21
+            object: html.img
+            identifiers:
+              - properties:
+                  - src:
+                      - val: content/images/banner-brand-icon-3.svg
+        - click:
+            shot: DevOps Test Hub - Initial - Team Space Dashboard_ojp3lb.dti.jpeg#311
+            object: html.div
+            identifiers:
+              - properties:
+                  - content:
+                      - val: No description.
+  - with:
+      note: DevOps Test Hub - 1550 - Overview
+      steps:
+        - click:
+            shot: DevOps Test Hub - 1550 - Overview_3x57qj.dti.jpeg#410
+            object: html.div
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Manage
+                locators:
+                  - leftof:
+                      object: html.div
+                      properties:
+                        - content:
+                            - val: '1'
+  - with:
+      note: DevOps Test Hub - TestProject - Configuration
+      steps:
+        - click:
+            shot: DevOps Test Hub - TestProject - Configuration_5ek2yv.dti.jpeg#753
+            object: html.span
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Add Repository
+        - click:
+            shot: DevOps Test Hub - TestProject - Configuration_mc6bwo.dti.jpeg#1128
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Git URL
+        - type:
+            shot: DevOps Test Hub - TestProject - Configuration_2mlwxf.dti.jpeg#1432
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Git URL
+            value: '${Git_URL}'
+        - click:
+            shot: DevOps Test Hub - TestProject - Configuration_mi6yrz.dti.jpeg#2043
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Username
+        - type:
+            shot: DevOps Test Hub - TestProject - Configuration_cxmu37.dti.jpeg#2345
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Username
+            value: '${Username_2}'
+        - click:
+            shot: DevOps Test Hub - TestProject - Configuration_zurpzk.dti.jpeg#2967
+            object: html.button
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Add
+        - pause: 10000ms
+        - run: SetDevBranch.dtx.yaml
+        - click:
+            shot: DevOps Test Hub - TestProject - Configuration_55qrgd.dti.jpeg#3063
+            object: html.div
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Execute
+                locators:
+                  - below:
+                      object: html.div
+                      properties:
+                        - content:
+                            - val: TestProject
+  - with:
+      note: DevOps Test Hub - TestProject - Execution
+      steps:
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_5ng2sq.dti.jpeg#3417
+            object: html.span
+            identifiers:
+              - properties:
+                  - content:
+                      - val: SUITES
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_s6aqlk.dti.jpeg#4050
+            object: html.button
+            identifiers:
+              - properties:
+                  - aria-label:
+                      - val: 'Open execution dialog for: Personalized Shopping Experience'
+                locators:
+                  - inside:
+                      object: html.td
+                      properties:
+                        - position:
+                            - val: '7 : 6'
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_52ckhp.dti.jpeg#4636
+            object: html.span
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Advanced
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_63rnhz.dti.jpeg#5086
+            object: html.textarea
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Program Arguments
+        - type:
+            shot: DevOps Test Hub - TestProject - Execution_2zemp2.dti.jpeg#5563
+            object: html.textarea
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Program Arguments
+            value: '${Program_Arguments}'
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_mvbxjh.dti.jpeg#6554
+            object: html.span
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Execute
+        - do:
+            steps:
+              - pause: 3000ms
+              - assign:
+                  shot: DevOps Test Hub - TestProject - Execution_vtnzzz.dti.jpeg#6901
+                  object: html.td
+                  identifiers:
+                    - properties:
+                        - xpath:
+                            - val: //div[@id='main']/div[2]/div[2]/div/table/tbody/tr[6]/td[5]
+                  properties:
+                    - content:
+                        - var: Done
+            while: Done != 'Fail' && Done != 'Error' && Done != 'Pass'
+  - with:
+      note: DevOps Test Hub - TestProject - Results
+      steps:
+        - click:
+            shot: DevOps Test Hub - TestProject - Results_qex76f.dti.jpeg#6998
+            object: html.img
+            identifiers:
+              - properties:
+                  - src:
+                      - val: content/images/banner-brand-icon-3.svg

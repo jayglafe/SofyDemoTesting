@@ -1,0 +1,87 @@
+note: Generated from recorded traffic using edge 145.0.3800.82
+configuration:
+  profile: edge
+  vars:
+    APP_SofyTestDemo_URL: https://testhub.sbx0240.play.hclsofy.dev/test/
+    Username: demo.user
+    Password: 7b6999644df38324a39cf1e9e444a7c070ba1c385a900dc691039f80a6e99563
+steps:
+  - open:
+      enabled: 'false'
+      note: Open SofyTestDemo
+      url: '${APP_SofyTestDemo_URL}'
+  - with:
+      enabled: 'false'
+      note: Sign in to platform
+      steps:
+        - click:
+            shot: Sign in to platform_w6mt6a.dti.jpeg#48
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Username
+        - type:
+            shot: Sign in to platform_aidd65.dti.jpeg#86
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Username
+            value: '${Username}'
+        - click:
+            shot: Sign in to platform_3xgpep.dti.jpeg#165
+            object: html.inputpassword
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Password
+        - type:
+            shot: Sign in to platform_yesylp.dti.jpeg#203
+            object: html.inputpassword
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Password
+            value: '${Password}'
+        - click:
+            shot: Sign in to platform_3bepfu.dti.jpeg#286
+            object: html.button
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Sign In
+  - with:
+      note: DevOps Test Hub - Initial - Team Space Dashboard
+      steps:
+        - click:
+            shot: DevOps Test Hub - Initial - Team Space Dashboard_6pitrt.dti.jpeg#43
+            object: html.img
+            identifiers:
+              - properties:
+                  - src:
+                      - val: content/images/banner-brand-icon-3.svg
+        - click:
+            shot: DevOps Test Hub - Initial - Team Space Dashboard_pwzx5w.dti.jpeg#323
+            object: html.span
+            identifiers:
+              - properties:
+                  - content:
+                      - val: TestProject
+  - with:
+      note: DevOps Test Hub - 1550 - Overview
+      steps:
+        - click:
+            shot: DevOps Test Hub - 1550 - Overview_tpdyso.dti.jpeg#492
+            object: html.path
+            identifiers:
+              - properties:
+                  - tagName:
+                      - val: path
+        - click:
+            shot: DevOps Test Hub - 1550 - Overview_haqqu2.dti.jpeg#901
+            object: html.p
+            identifiers:
+              - properties:
+                  - content:
+                      - val: DEV

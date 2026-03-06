@@ -1,0 +1,4 @@
+steps:
+  - run: Login.dtx.yaml
+  - run: SetDevBranch.dtx.yaml
+  - run: RunPostmanTest.dtx.yaml

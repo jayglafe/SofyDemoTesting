@@ -3,34 +3,13 @@ configuration:
   profile: edge
   vars:
     APP_SofyTestDemo_URL: https://testhub.sbx0240.play.hclsofy.dev/test
-    Username:
-      expr: demo.user
-      type: val
-      modifier: in
-    Password:
-      expr: 7b6999644df38324a39cf1e9e444a7c070ba1c385a900dc691039f80a6e99563
-      type: val
-      modifier: in
-    Name:
-      expr: hostname
-      type: val
-      modifier: in
-    Value:
-      expr: commerce-preview.sbx0240.play.hclsofy.dev
-      type: val
-      modifier: in
-    Name_2:
-      expr: port_num
-      type: val
-      modifier: in
-    Value_3:
-      expr: '443'
-      type: val
-      modifier: in
-    Done:
-      expr: UnInitialized
-      type: val
-      modifier: in
+    Username: demo.user
+    Password: 7b6999644df38324a39cf1e9e444a7c070ba1c385a900dc691039f80a6e99563
+    Name: hostname
+    Value: commerce-preview.sbx0240.play.hclsofy.dev
+    Name_2: port_num
+    Value_3: '443'
+    Done: UnInitialized
 steps:
   - open:
       enabled: 'false'
@@ -119,13 +98,7 @@ steps:
             identifiers:
               - properties:
                   - aria-label:
-                      - val: 'Open execution dialog for: Register Users & Add Address'
-                locators:
-                  - inside:
-                      object: html.td
-                      properties:
-                        - position:
-                            - val: '7 : 5'
+                      - val: 'Open execution dialog for: Register Users and Add Address'
         - click:
             shot: DevOps Test Hub - TestProject - Execution_sems24.dti.jpeg#1392
             object: html.span
@@ -260,7 +233,7 @@ steps:
             identifiers:
               - properties:
                   - content:
-                      - val: Register Users & Add Address
+                      - val: Register Users and Add Address
         - click:
             shot: DevOps Test Hub - TestProject - Results_evdbio.dti.jpeg#10921
             object: html.svg
