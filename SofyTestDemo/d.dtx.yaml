@@ -1,4 +1,9 @@
 steps:
   - run: Login.dtx.yaml
-  - run: SetDevBranch.dtx.yaml
-  - run: RunPostmanTest.dtx.yaml
+  - run:
+      enabled: 'false'
+      url: SetDevBranch.dtx.yaml
+  - run:
+      enabled: 'false'
+      url: RunPostmanTest.dtx.yaml
+  - run: RunJMeter.dtx.yaml

@@ -1,0 +1,160 @@
+note: Generated from recorded traffic using edge 145.0.3800.82
+configuration:
+  profile: edge
+  vars:
+    APP_SofyTestDemo_URL: https://testhub.sbx0240.play.hclsofy.dev/test/
+    Username: demo.user
+    Password: 7b6999644df38324a39cf1e9e444a7c070ba1c385a900dc691039f80a6e99563
+    Done: Unitialized
+steps:
+  - open:
+      enabled: 'false'
+      note: Open SofyTestDemo
+      url: '${APP_SofyTestDemo_URL}'
+  - with:
+      enabled: 'false'
+      note: Sign in to platform
+      steps:
+        - click:
+            shot: Sign in to platform_3vtgr5.dti.jpeg#48
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Username
+        - type:
+            shot: Sign in to platform_rv5qjk.dti.jpeg#86
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Username
+            value: '${Username}'
+        - click:
+            shot: Sign in to platform_lu3uvx.dti.jpeg#165
+            object: html.inputpassword
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Password
+        - type:
+            shot: Sign in to platform_cl4nuy.dti.jpeg#203
+            object: html.inputpassword
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Password
+            value: '${Password}'
+        - click:
+            shot: Sign in to platform_k35d4v.dti.jpeg#286
+            object: html.button
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Sign In
+  - with:
+      note: DevOps Test Hub - Initial - Team Space Dashboard
+      steps:
+        - click:
+            shot: DevOps Test Hub - Initial - Team Space Dashboard_ul7cb7.dti.jpeg#160
+            object: html.div
+            identifiers:
+              - properties:
+                  - content:
+                      - val: TestProject
+                locators:
+                  - above:
+                      object: html.div
+                      properties:
+                        - content:
+                            - val: No description.
+  - with:
+      note: DevOps Test Hub - 1800 - Overview
+      steps:
+        - click:
+            shot: DevOps Test Hub - 1800 - Overview_pdpckz.dti.jpeg#321
+            object: html.svg
+            identifiers:
+              - properties:
+                  - fill:
+                      - val: none
+        - click:
+            shot: DevOps Test Hub - 1800 - Overview_gkgdvs.dti.jpeg#727
+            object: html.p
+            identifiers:
+              - properties:
+                  - content:
+                      - val: DEV
+        - click:
+            shot: DevOps Test Hub - 1800 - Overview_lpamog.dti.jpeg#845
+            object: html.div
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Execute
+                locators:
+                  - leftof:
+                      object: html.label
+                      properties:
+                        - content:
+                            - val: Execution results
+  - with:
+      note: DevOps Test Hub - TestProject - Execution
+      steps:
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_7lt47x.dti.jpeg#1334
+            object: html.button
+            identifiers:
+              - properties:
+                  - aria-label:
+                      - val: 'Open execution dialog for: Emerald_Homepage.jmx'
+                locators:
+                  - inside:
+                      object: html.td
+                      properties:
+                        - position:
+                            - val: '7 : 4'
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_jfgmfh.dti.jpeg#1968
+            object: html.button
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Execute
+        - do:
+            steps:
+              - pause: 3000ms
+              - assign:
+                  shot: DevOps Test Hub - TestProject - Execution_xk24li.dti.jpeg#2075
+                  object: html.td
+                  identifiers:
+                    - properties:
+                        - position:
+                            - val: '5 : 4'
+                  properties:
+                    - content:
+                        - var: Done
+            while: Done != 'Pass'
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_xk24li.dti.jpeg#2075
+            object: html.div
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Analyze
+                locators:
+                  - leftof:
+                      object: html.td
+                      properties:
+                        - position:
+                            - val: '1 : 7'
+  - with:
+      note: DevOps Test Hub - TestProject - Results
+      steps:
+        - click:
+            shot: DevOps Test Hub - TestProject - Results_gnbk37.dti.jpeg#2401
+            object: html.img
+            identifiers:
+              - properties:
+                  - src:
+                      - val: content/images/banner-brand-icon-3.svg
