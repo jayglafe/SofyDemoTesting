@@ -1,0 +1,229 @@
+note: Generated from recorded traffic using edge 145.0.3800.82
+configuration:
+  profile: edge
+  vars:
+    APP_SofyTestDemo_URL: https://testhub.sbx0240.play.hclsofy.dev/test/
+    Username: demo.user
+    Password: 7b6999644df38324a39cf1e9e444a7c070ba1c385a900dc691039f80a6e99563
+    Done: Unitialized
+steps:
+  - open:
+      enabled: 'false'
+      note: Open SofyTestDemo
+      url: '${APP_SofyTestDemo_URL}'
+  - with:
+      enabled: 'false'
+      note: Sign in to platform
+      steps:
+        - click:
+            shot: Sign in to platform_f5ezsa.dti.jpeg#48
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Username
+        - type:
+            shot: Sign in to platform_gabrzg.dti.jpeg#86
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Username
+            value: '${Username}'
+        - type:
+            shot: Sign in to platform_gt5vj3.dti.jpeg#127
+            object: html.inputpassword
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Password
+            value: '${Password}'
+        - click:
+            shot: Sign in to platform_f37rs2.dti.jpeg#210
+            object: html.button
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Sign In
+  - with:
+      note: DevOps Test Hub - Initial - Team Space Dashboard
+      steps:
+        - click:
+            shot: DevOps Test Hub - Initial - Team Space Dashboard_xwersy.dti.jpeg#43
+            object: html.img
+            identifiers:
+              - properties:
+                  - src:
+                      - val: content/images/banner-brand-icon-3.svg
+        - click:
+            shot: DevOps Test Hub - Initial - Team Space Dashboard_tsmhhp.dti.jpeg#351
+            object: html.div
+            identifiers:
+              - properties:
+                  - content:
+                      - val: |-
+                          Owners
+                          DU
+  - with:
+      note: DevOps Test Hub - 1400 - Overview
+      steps:
+        - click:
+            shot: DevOps Test Hub - 1400 - Overview_yfw4co.dti.jpeg#469
+            object: html.div
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Execute
+                locators:
+                  - leftof:
+                      object: html.label
+                      properties:
+                        - content:
+                            - val: Execution results
+  - with:
+      note: DevOps Test Hub - TestProject - Execution
+      steps:
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_5ikbi7.dti.jpeg#872
+            object: html.button
+            identifiers:
+              - properties:
+                  - aria-label:
+                      - val: 'Open execution dialog for: Add To Cart'
+                locators:
+                  - inside:
+                      object: html.td
+                      properties:
+                        - position:
+                            - val: '7 : 1'
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_tqsp23.dti.jpeg#1488
+            object: html.button
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Execute
+        - do:
+            steps:
+              - pause: 10000ms
+              - assign:
+                  shot: DevOps Test Hub - TestProject - Execution_gjutje.dti.jpeg#1701
+                  object: html.td
+                  identifiers:
+                    - properties:
+                        - position:
+                            - val: '5 : 1'
+                  properties:
+                    - content:
+                        - var: Done
+            while: Done != 'Pass' && Done != 'Error' && Done != 'Fail'
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_gjutje.dti.jpeg#1701
+            object: html.div
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Analyze
+                locators:
+                  - position: '3'
+  - with:
+      note: DevOps Test Hub - TestProject - Results
+      steps:
+        - click:
+            shot: DevOps Test Hub - TestProject - Results_utk75o.dti.jpeg#2336
+            object: html.img
+            identifiers:
+              - properties:
+                  - src:
+                      - val: content/images/banner-brand-icon-3.svg
+  - with:
+      note: DevOps Test Hub - Initial - Team Space Dashboard
+      steps:
+        - click:
+            shot: DevOps Test Hub - Initial - Team Space Dashboard_xwersy.dti.jpeg#43
+            object: html.img
+            identifiers:
+              - properties:
+                  - src:
+                      - val: content/images/banner-brand-icon-3.svg
+        - click:
+            shot: DevOps Test Hub - Initial - Team Space Dashboard_tsmhhp.dti.jpeg#351
+            object: html.div
+            identifiers:
+              - properties:
+                  - content:
+                      - val: |-
+                          Owners
+                          DU
+  - with:
+      note: DevOps Test Hub - 1400 - Overview
+      steps:
+        - click:
+            shot: DevOps Test Hub - 1400 - Overview_yfw4co.dti.jpeg#469
+            object: html.div
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Execute
+                locators:
+                  - leftof:
+                      object: html.label
+                      properties:
+                        - content:
+                            - val: Execution results
+  - with:
+      note: DevOps Test Hub - TestProject - Execution
+      steps:
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_5ikbi7.dti.jpeg#872
+            object: html.button
+            identifiers:
+              - properties:
+                  - aria-label:
+                      - val: 'Open execution dialog for: Add To Cart and Checkout'
+                locators:
+                  - inside:
+                      object: html.td
+                      properties:
+                        - position:
+                            - val: '7 : 2'
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_tqsp23.dti.jpeg#1488
+            object: html.button
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Execute
+        - do:
+            steps:
+              - pause: 10000ms
+              - assign:
+                  shot: DevOps Test Hub - TestProject - Execution_gjutje.dti.jpeg#1701
+                  object: html.td
+                  identifiers:
+                    - properties:
+                        - position:
+                            - val: '5 : 2'
+                  properties:
+                    - content:
+                        - var: Done
+            while: Done != 'Pass' && Done != 'Error' && Done != 'Fail'
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_gjutje.dti.jpeg#1701
+            object: html.div
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Analyze
+                locators:
+                  - position: '3'
+  - with:
+      note: DevOps Test Hub - TestProject - Results
+      steps:
+        - click:
+            shot: DevOps Test Hub - TestProject - Results_utk75o.dti.jpeg#2336
+            object: html.img
+            identifiers:
+              - properties:
+                  - src:
+                      - val: content/images/banner-brand-icon-3.svg

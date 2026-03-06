@@ -12,3 +12,4 @@ steps:
   - run: Login.dtx.yaml
   - run: NewProject.dtx.yaml
   - run: RunFirstTest.dtx.yaml
+  - run: RunAPITests.dtx.yaml

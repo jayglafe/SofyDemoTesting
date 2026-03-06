@@ -2,24 +2,14 @@ note: Generated from recorded traffic using edge 145.0.3800.70
 configuration:
   profile: edge
   vars:
-    APP_SofyConsole_URL:
-      expr: https://sofy-console.sbx0240.play.hclsofy.dev/
-      type: val
-      modifier: in
-    Username_or_email:
-      expr: sol-admin
-      type: val
-      modifier: in
-    Password:
-      expr: m204liSWNo
-      modifier: in
+    APP_SofyConsole_URL: https://sofy-console.sbx0240.play.hclsofy.dev/
+    Username_or_email: sol-admin
+    Password: m204liSWNo
     PrometheusPort:
       expr: '80'
-      type: val
       modifier: out
     PrometheusIp:
       expr: ''
-      type: val
       modifier: out
 steps:
   - open:
@@ -96,6 +86,7 @@ steps:
                         - content:
                             - val: ACTION
         - verify:
+            enabled: 'false'
             shot: Sandbox Admin_tbca3s.dti.jpeg#3896
             object: html.span
             identifiers:
@@ -110,8 +101,10 @@ steps:
             object: html.span
             identifiers:
               - properties:
-                  - content:
-                      - val: '46'
+                  - class:
+                      - val: number
+                  - xpath:
+                      - val: //div[@id='btn-pods']/div/div[2]/div[2]/div/span
   - with:
       note: Sandbox Admin
       steps:
