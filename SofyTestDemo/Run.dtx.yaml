@@ -5,16 +5,13 @@ configuration:
     gPrometheusPort: ''
 steps:
   - run:
-      enabled: 'false'
       url: asset://github.com%2Fjayglafe%2FSofyDemoTesting/SofyConsole/SofyConsoleHealthCheck.dtx.yaml
       out:
         PrometheusIp:
           - gPrometheusIp
         PrometheusPort:
           - gPrometheusPort
-  - log:
-      enabled: 'false'
-      note: 'Ip / Port : ${gPrometheusIp} ${gPrometheusPort}'
+  - log: 'Ip / Port : ${gPrometheusIp} ${gPrometheusPort}'
   - run: Login.dtx.yaml
   - run: NewProject.dtx.yaml
   - run: SetDevBranch.dtx.yaml
