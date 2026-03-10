@@ -3,16 +3,14 @@ configuration:
   profile: edge
   vars:
     APP_SofyTestDemo_URL:
-      expr: https://testhub.sbx0240.play.hclsofy.dev/test/
+      expr: https://testhub.sbx0276.play.hclsofy.dev/test/
       type: val
       modifier: in
     Username:
       expr: demo.user
       type: val
       modifier: in
-    Password:
-      expr: 7b6999644df38324a39cf1e9e444a7c070ba1c385a900dc691039f80a6e99563
-      modifier: in
+    Password: 6114e1acb8ae610dcb6802a85da366d9d9b4a4c2c21d8aa36587470c5822e2d1
     LiContract:
       expr: 'false'
       type: val

@@ -2,9 +2,9 @@ note: Generated from recorded traffic using edge 145.0.3800.82
 configuration:
   profile: edge
   vars:
-    APP_SofyTestDemo_URL: https://testhub.sbx0240.play.hclsofy.dev/test/
+    APP_SofyTestDemo_URL: https://testhub.sbx0276.play.hclsofy.dev/test/
     Username: demo.user
-    Password: 7b6999644df38324a39cf1e9e444a7c070ba1c385a900dc691039f80a6e99563
+    Password: 6114e1acb8ae610dcb6802a85da366d9d9b4a4c2c21d8aa36587470c5822e2d1
     Done: Unitialized
 steps:
   - open:
@@ -72,20 +72,6 @@ steps:
       note: DevOps Test Hub - 1800 - Overview
       steps:
         - click:
-            shot: DevOps Test Hub - 1800 - Overview_pdpckz.dti.jpeg#321
-            object: html.svg
-            identifiers:
-              - properties:
-                  - fill:
-                      - val: none
-        - click:
-            shot: DevOps Test Hub - 1800 - Overview_gkgdvs.dti.jpeg#727
-            object: html.p
-            identifiers:
-              - properties:
-                  - content:
-                      - val: DEV
-        - click:
             shot: DevOps Test Hub - 1800 - Overview_lpamog.dti.jpeg#845
             object: html.div
             identifiers:
@@ -135,6 +121,8 @@ steps:
                     - content:
                         - var: Done
             while: Done != 'Pass'
+        - verify:
+            - Done == 'Pass'
         - click:
             shot: DevOps Test Hub - TestProject - Execution_xk24li.dti.jpeg#2075
             object: html.div

@@ -2,9 +2,9 @@ note: Generated from recorded traffic using edge 145.0.3800.82
 configuration:
   profile: edge
   vars:
-    APP_SofyTestDemo_URL: https://testhub.sbx0240.play.hclsofy.dev/test/
+    APP_SofyTestDemo_URL: https://testhub.sbx0276.play.hclsofy.dev/test/
     Username: demo.user
-    Password: 7b6999644df38324a39cf1e9e444a7c070ba1c385a900dc691039f80a6e99563
+    Password: 6114e1acb8ae610dcb6802a85da366d9d9b4a4c2c21d8aa36587470c5822e2d1
     Done: Unitialized
 steps:
   - open:
@@ -117,6 +117,8 @@ steps:
                     - content:
                         - var: Done
             while: Done != 'Pass' && Done != 'Error' && Done != 'Fail'
+        - verify:
+            - Done == 'Pass'
         - click:
             shot: DevOps Test Hub - TestProject - Execution_gjutje.dti.jpeg#1701
             object: html.div
@@ -208,6 +210,8 @@ steps:
                     - content:
                         - var: Done
             while: Done != 'Pass' && Done != 'Error' && Done != 'Fail'
+        - verify:
+            - Done == 'Pass'
         - click:
             shot: DevOps Test Hub - TestProject - Execution_gjutje.dti.jpeg#1701
             object: html.div

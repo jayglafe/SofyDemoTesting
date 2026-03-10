@@ -2,9 +2,9 @@ note: Generated from recorded traffic using edge 145.0.3800.82
 configuration:
   profile: edge
   vars:
-    APP_SofyConsole_URL: https://testhub.sbx0213.play.hclsofy.dev/test/
+    APP_SofyConsole_URL: https://testhub.sbx0276.play.hclsofy.dev/test/
     Username: demo.user
-    Password: c3157dd6906fb0b8cf06017930cc92bdcbaa41bbfd9fda8627fbf8562b4d3a53
+    Password: 6114e1acb8ae610dcb6802a85da366d9d9b4a4c2c21d8aa36587470c5822e2d1
     Name: TestProject
     Git_URL: https://github.com/HCL-TECH-SOFTWARE/Emerald-One-Test-Studio-Tests.git
     Username_2: jayglafe
@@ -143,3 +143,4 @@ steps:
               - properties:
                   - content:
                       - val: Add
+        - pause: 2000ms

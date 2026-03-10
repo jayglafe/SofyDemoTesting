@@ -1,14 +1,20 @@
 configuration:
+  profile: edge
   vars:
     gPrometheusIp: ''
+    gPrometheusPort: ''
 steps:
-  - run: asset://github.com%2Fjayglafe%2FSofyDemoTesting/SofyConsole/SofyConsoleHealthCheck.dtx.yaml
-  - assign:
+  - run:
       enabled: 'false'
-      vars:
-        gPrometheusIp: ''
+      url: asset://github.com%2Fjayglafe%2FSofyDemoTesting/SofyConsole/SofyConsoleHealthCheck.dtx.yaml
+      out:
+        PrometheusIp:
+          - gPrometheusIp
+        PrometheusPort:
+          - gPrometheusPort
   - log:
       enabled: 'false'
+      note: 'Ip / Port : ${gPrometheusIp} ${gPrometheusPort}'
   - run: Login.dtx.yaml
   - run: NewProject.dtx.yaml
   - run: SetDevBranch.dtx.yaml
@@ -16,3 +22,8 @@ steps:
   - run: RunAPITests.dtx.yaml
   - run: RunPostmanTest.dtx.yaml
   - run: RunJMeter.dtx.yaml
+  - run:
+      url: RunPerformanceTest.dtx.yaml
+      in:
+        PrometheusIp: '${gPrometheusIp}'
+        PrometheusPort: '${gPrometheusPort}'

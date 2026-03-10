@@ -6,4 +6,7 @@ steps:
   - run:
       enabled: 'false'
       url: RunPostmanTest.dtx.yaml
-  - run: RunJMeter.dtx.yaml
+  - run:
+      enabled: 'false'
+      url: RunJMeter.dtx.yaml
+  - run: RunPerformanceTest.dtx.yaml

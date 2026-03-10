@@ -2,14 +2,22 @@ note: Generated from recorded traffic using edge 145.0.3800.70
 configuration:
   profile: edge
   vars:
-    APP_SofyConsole_URL: https://sofy-console.sbx0240.play.hclsofy.dev/
-    Username_or_email: sol-admin
-    Password: m204liSWNo
+    APP_SofyConsole_URL: https://sofy-console.sbx0276.play.hclsofy.dev
+    Username_or_email:
+      expr: sol-admin
+      type: val
+      modifier: in
+    Password:
+      expr: UJA1j3HRm2
+      type: val
+      modifier: in
     PrometheusPort:
       expr: '80'
+      type: val
       modifier: out
     PrometheusIp:
       expr: ''
+      type: val
       modifier: out
 steps:
   - open:
@@ -43,6 +51,19 @@ steps:
             value: '${Password}'
         - click:
             shot: Sign in to access-control-service_2hrvqk.dti.jpeg#296
+            object: html.i
+            identifiers:
+              - properties:
+                  - xpath:
+                      - val: //form[@id='kc-form-login']/div[2]/div[2]/div[2]/button/i
+                locators:
+                  - below:
+                      object: html.inputtext
+                      properties:
+                        - label:
+                            - val: Username or email
+        - click:
+            shot: Sign in to access-control-service_2hrvqk-1773053542621.dti.jpeg
             object: html.button
             identifiers:
               - properties:
