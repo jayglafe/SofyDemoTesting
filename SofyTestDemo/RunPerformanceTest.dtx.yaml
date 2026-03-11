@@ -5,7 +5,6 @@ configuration:
     APP_SofyTestDemo_URL: https://testhub.sbx0276.play.hclsofy.dev/test/
     Username: demo.user
     Password: 6114e1acb8ae610dcb6802a85da366d9d9b4a4c2c21d8aa36587470c5822e2d1
-    Target_host: 34.118.224.115
     Name: Cpu for HCL-Commerce
     TYPE_2: |+
       sum(system_cpu_usage{app="HCL-Commerce"}) by (pod)

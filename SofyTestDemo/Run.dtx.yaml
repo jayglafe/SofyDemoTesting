@@ -3,25 +3,76 @@ configuration:
   vars:
     gPrometheusIp: ''
     gPrometheusPort: ''
+    gCommerceHostname: commerce-preview.sbx0188.play.hclsofy.dev
+    gCommercePort: '443'
+    gTestHubHostname: testhub.sbx0188.play.hclsofy.dev
+    gConsoleHostname: sofy-console.sbx0188.play.hclsofy.dev
+    gConsolePassword: TMRd2oPvUC
+    gTestHubPassword: d6c1503f0a2b8f5ad1acfbd5f53316d152805a4eb72248cc48e5c9a08dc695f8
+    githubUser: jayglafe
 steps:
   - run:
       url: asset://github.com%2Fjayglafe%2FSofyDemoTesting/SofyConsole/SofyConsoleHealthCheck.dtx.yaml
+      in:
+        APP_SofyConsole_URL: https://${gConsoleHostname}
+        Password: '${gConsolePassword}'
       out:
         PrometheusIp:
           - gPrometheusIp
         PrometheusPort:
           - gPrometheusPort
-  - log: 'Ip / Port : ${gPrometheusIp} ${gPrometheusPort}'
-  - run: Login.dtx.yaml
-  - run: NewProject.dtx.yaml
-  - run: SetDevBranch.dtx.yaml
-  - run: RunFirstTest.dtx.yaml
-  - run: RunAPITests.dtx.yaml
-  - run: RunPostmanTest.dtx.yaml
-  - run: RunJMeter.dtx.yaml
+  - run:
+      url: Login.dtx.yaml
+      in:
+        APP_SofyTestDemo_URL: https://${gTestHubHostname}/test/
+        Password: '${gTestHubPassword}'
+  - run: DeleteProject.dtx.yaml
+  - run:
+      url: NewProject.dtx.yaml
+      in:
+        APP_SofyConsole_URL: https://${gTestHubHostname}/test/
+        Password: '${gTestHubPassword}'
+        Username_2: '${githubUser}'
+  - run:
+      url: SetDevBranch.dtx.yaml
+      in:
+        APP_SofyTestDemo_URL: https://${gTestHubHostname}/test/
+        Password: '${gTestHubPassword}'
+  - run:
+      url: RunFirstTest.dtx.yaml
+      in:
+        APP_SofyTestDemo_URL: https://${gTestHubHostname}/test/
+        Password: '${gTestHubPassword}'
+        Value: '${gCommerceHostname}'
+        Value_3: '${gCommercePort}'
+  - run:
+      url: RunAPITests.dtx.yaml
+      in:
+        Password: '${gTestHubPassword}'
+        APP_SofyTestDemo_URL: https://${gTestHubHostname}/test/
+  - run:
+      url: RunPostmanTest.dtx.yaml
+      in:
+        APP_SofyTestDemo_URL: https://${gTestHubHostname}/test/
+        Password: '${gTestHubPassword}'
+        Username_2: '${githubUser}'
+  - run:
+      url: RunJMeter.dtx.yaml
+      in:
+        APP_SofyTestDemo_URL: https://${gTestHubHostname}/test/
+        Password: '${gTestHubPassword}'
   - run:
       url: RunPerformanceTest.dtx.yaml
       in:
         PrometheusIp: '${gPrometheusIp}'
         PrometheusPort: '${gPrometheusPort}'
-  - run: RunSecondTest.dtx.yaml
+        APP_SofyTestDemo_URL: https://${gTestHubHostname}/test/
+        Password: '${gTestHubPassword}'
+        Target_host: '${gPrometheusIp}'
+  - run:
+      url: RunSecondTest.dtx.yaml
+      in:
+        APP_SofyTestDemo_URL: https://${gTestHubHostname}/test/
+        Password: '${gTestHubPassword}'
+        Value: '${gCommerceHostname}'
+        Value_3: '${gCommercePort}'

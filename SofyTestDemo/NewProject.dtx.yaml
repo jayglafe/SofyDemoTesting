@@ -143,4 +143,4 @@ steps:
               - properties:
                   - content:
                       - val: Add
-        - pause: 2000ms
+        - pause: 7000ms

@@ -1,0 +1,123 @@
+note: Generated from recorded traffic using edge 145.0.3800.97
+configuration:
+  profile: edge
+  vars:
+    APP_SofyTestDemo_URL: https://testhub.sbx0188.play.hclsofy.dev/test/
+    Username: demo.user
+    Password: d6c1503f0a2b8f5ad1acfbd5f53316d152805a4eb72248cc48e5c9a08dc695f8
+    BodyContents: ''
+steps:
+  - open:
+      enabled: 'false'
+      note: Open SofyTestDemo
+      url: '${APP_SofyTestDemo_URL}'
+  - with:
+      enabled: 'false'
+      note: Sign in to platform
+      steps:
+        - click:
+            shot: Sign in to platform_ipntx2.dti.jpeg#48
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Username
+        - type:
+            shot: Sign in to platform_hoiwre.dti.jpeg#86
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Username
+            value: '${Username}'
+        - click:
+            shot: Sign in to platform_h24p2s.dti.jpeg#165
+            object: html.inputpassword
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Password
+        - type:
+            shot: Sign in to platform_6anq2q.dti.jpeg#203
+            object: html.inputpassword
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Password
+            value: '${Password}'
+        - click:
+            shot: Sign in to platform_p76peq.dti.jpeg#286
+            object: html.button
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Sign In
+  - with:
+      note: DevOps Test Hub - Initial - Team Space Dashboard
+      steps:
+        - assign:
+            shot: DevOps Test Hub - Initial - Team Space Dashboard_lmlyd2.dti.jpeg#160
+            object: html.body
+            identifiers:
+              - properties:
+                  - title:
+                      - val: DevOps Test Hub - Initial - Team Space Dashboard
+            properties:
+              - content:
+                  - var: BodyContents
+        - if:
+            condition: BodyContents.includes('TestProject')
+            steps:
+              - click:
+                  shot: DevOps Test Hub - Initial - Team Space Dashboard_lmlyd2.dti.jpeg#160
+                  object: html.div
+                  identifiers:
+                    - properties:
+                        - content:
+                            - val: TestProject
+                      locators:
+                        - above:
+                            object: html.div
+                            properties:
+                              - content:
+                                  - val: No description.
+              - with:
+                  note: DevOps Test Hub - 1150 - Overview
+                  steps:
+                    - click:
+                        shot: DevOps Test Hub - 1150 - Overview_hngcng.dti.jpeg#258
+                        object: html.div
+                        identifiers:
+                          - properties:
+                              - content:
+                                  - val: Manage
+                            locators:
+                              - leftof:
+                                  object: html.div
+                                  properties:
+                                    - content:
+                                        - val: '1'
+              - with:
+                  note: DevOps Test Hub - TestProject - Configuration
+                  steps:
+                    - click:
+                        shot: DevOps Test Hub - TestProject - Configuration_d7iyqt.dti.jpeg#566
+                        object: html.span
+                        identifiers:
+                          - properties:
+                              - content:
+                                  - val: delete
+                    - click:
+                        shot: DevOps Test Hub - TestProject - Configuration_r6rz3j.dti.jpeg#990
+                        object: html.inputcheckbox
+                        identifiers:
+                          - properties:
+                              - label:
+                                  - val: I understand project deletion is permanent.
+                    - click:
+                        shot: DevOps Test Hub - TestProject - Configuration_ln2qxg.dti.jpeg#1297
+                        object: html.span
+                        identifiers:
+                          - properties:
+                              - content:
+                                  - val: Delete

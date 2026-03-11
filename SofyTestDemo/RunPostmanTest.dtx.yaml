@@ -2,39 +2,13 @@ note: Generated from recorded traffic using edge 145.0.3800.82
 configuration:
   profile: edge
   vars:
-    APP_SofyTestDemo_URL:
-      expr: https://testhub.sbx0276.play.hclsofy.dev/test/
-      type: val
-      modifier: in
-    Username:
-      expr: demo.user
-      type: val
-      modifier: in
-    Password:
-      expr: 6114e1acb8ae610dcb6802a85da366d9d9b4a4c2c21d8aa36587470c5822e2d1
-      type: val
-      modifier: in
-    Git_URL:
-      expr: https://github.com/HCL-TECH-SOFTWARE/Emerald-Other-Tests
-      type: val
-      modifier: in
-    Username_2:
-      expr: jayglafe
-      type: val
-      modifier: in
-    Program_Arguments:
-      expr: --insecure
-      type: val
-      modifier: in
-    Done:
-      expr: Uninitialized
-      type: val
-      modifier: in
-    PrometheusIp:
-      expr: ''
-      type: val
-      modifier: in
-    PrometheusPort: ''
+    APP_SofyTestDemo_URL: https://testhub.sbx0276.play.hclsofy.dev/test/
+    Username: demo.user
+    Password: 6114e1acb8ae610dcb6802a85da366d9d9b4a4c2c21d8aa36587470c5822e2d1
+    Git_URL: https://github.com/HCL-TECH-SOFTWARE/Emerald-Other-Tests
+    Username_2: jayglafe
+    Program_Arguments: --insecure
+    Done: Uninitialized
 steps:
   - open:
       enabled: 'false'
