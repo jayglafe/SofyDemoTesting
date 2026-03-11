@@ -3,21 +3,13 @@ configuration:
   profile: edge
   vars:
     APP_SofyConsole_URL: https://sofy-console.sbx0276.play.hclsofy.dev
-    Username_or_email:
-      expr: sol-admin
-      type: val
-      modifier: in
-    Password:
-      expr: UJA1j3HRm2
-      type: val
-      modifier: in
+    Username_or_email: sol-admin
+    Password: UJA1j3HRm2
     PrometheusPort:
       expr: '80'
-      type: val
       modifier: out
     PrometheusIp:
       expr: ''
-      type: val
       modifier: out
 steps:
   - open:
@@ -139,7 +131,7 @@ steps:
   - with:
       note: Sandbox Admin
       steps:
-        - pause: 2000ms
+        - pause: 5000ms
         - assign:
             shot: Sandbox Admin_m54jc6.dti.jpeg#7571
             object: html.body

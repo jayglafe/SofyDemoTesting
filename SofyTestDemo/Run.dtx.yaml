@@ -24,3 +24,4 @@ steps:
       in:
         PrometheusIp: '${gPrometheusIp}'
         PrometheusPort: '${gPrometheusPort}'
+  - run: RunSecondTest.dtx.yaml
