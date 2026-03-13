@@ -1,15 +1,41 @@
 configuration:
   profile: edge
   vars:
-    gPrometheusIp: ''
-    gPrometheusPort: ''
-    gCommerceHostname: commerce-preview.sbx0188.play.hclsofy.dev
-    gCommercePort: '443'
-    gTestHubHostname: testhub.sbx0188.play.hclsofy.dev
-    gConsoleHostname: sofy-console.sbx0188.play.hclsofy.dev
-    gConsolePassword: TMRd2oPvUC
-    gTestHubPassword: d6c1503f0a2b8f5ad1acfbd5f53316d152805a4eb72248cc48e5c9a08dc695f8
-    githubUser: jayglafe
+    gPrometheusIp:
+      expr: ''
+      type: val
+      modifier: in
+    gPrometheusPort:
+      expr: ''
+      type: val
+      modifier: in
+    gCommerceHostname:
+      expr: commerce-preview.sbx0054.play.hclsofy.dev
+      type: val
+      modifier: in
+    gCommercePort:
+      expr: '443'
+      type: val
+      modifier: in
+    gTestHubHostname:
+      expr: testhub.sbx0054.play.hclsofy.dev
+      type: val
+      modifier: in
+    gConsoleHostname:
+      expr: sofy-console.sbx0054.play.hclsofy.dev
+      type: val
+      modifier: in
+    gConsolePassword:
+      expr: kjdR0UA8aq
+      modifier: in
+    gTestHubPassword:
+      expr: fe251c0243c33efa23f5d12930d7a0c1a97ce707354e9013f37f1855cb4f6955
+      type: val
+      modifier: in
+    githubUser:
+      expr: jayglafe
+      type: val
+      modifier: in
 steps:
   - run:
       url: asset://github.com%2Fjayglafe%2FSofyDemoTesting/SofyConsole/SofyConsoleHealthCheck.dtx.yaml
@@ -76,3 +102,13 @@ steps:
         Password: '${gTestHubPassword}'
         Value: '${gCommerceHostname}'
         Value_3: '${gCommercePort}'
+  - run:
+      url: RunWithDDF.dtx.yaml
+      in:
+        Password: '${gTestHubPassword}'
+        APP_SofyTestDemo_URL: https://${gTestHubHostname}/test/
+  - run:
+      url: RunWithNewData.dtx.yaml
+      in:
+        APP_SofyTestDemo_URL: https://${gTestHubHostname}/test/
+        Password: '${gTestHubPassword}'

@@ -1,0 +1,208 @@
+note: Generated from recorded traffic using edge 145.0.3800.97
+configuration:
+  profile: edge
+  vars:
+    APP_SofyTestDemo_URL: https://testhub.sbx0188.play.hclsofy.dev/test/
+    Username: demo.user
+    Password: d6c1503f0a2b8f5ad1acfbd5f53316d152805a4eb72248cc48e5c9a08dc695f8
+    Number_of_rows: '10'
+    Done: ''
+steps:
+  - open:
+      enabled: 'false'
+      note: Open SofyTestDemo
+      url: '${APP_SofyTestDemo_URL}'
+  - with:
+      enabled: 'false'
+      note: Sign in to platform
+      steps:
+        - click:
+            shot: Sign in to platform_rmgslf.dti.jpeg#124
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Username
+        - type:
+            shot: Sign in to platform_k4yz6u.dti.jpeg#162
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Username
+            value: '${Username}'
+        - type:
+            shot: Sign in to platform_zaagt6.dti.jpeg#203
+            object: html.inputpassword
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Password
+            value: '${Password}'
+        - click:
+            shot: Sign in to platform_jjx4d6.dti.jpeg#286
+            object: html.button
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Sign In
+  - with:
+      note: DevOps Test Hub - Initial - Team Space Dashboard
+      steps:
+        - click:
+            shot: DevOps Test Hub - Initial - Team Space Dashboard_hf73ty.dti.jpeg#152
+            object: html.span
+            identifiers:
+              - properties:
+                  - content:
+                      - val: TestProject
+  - with:
+      note: DevOps Test Hub - 1300 - Overview
+      steps:
+        - click:
+            enabled: 'false'
+            shot: DevOps Test Hub - 1300 - Overview_uf2tls.dti.jpeg#324
+            object: html.svg
+            identifiers:
+              - properties:
+                  - fill:
+                      - val: none
+        - click:
+            enabled: 'false'
+            shot: DevOps Test Hub - 1300 - Overview_akqqnv.dti.jpeg#730
+            object: html.p
+            identifiers:
+              - properties:
+                  - content:
+                      - val: DEV
+        - click:
+            shot: DevOps Test Hub - 1300 - Overview_boyg7q.dti.jpeg#848
+            object: html.div
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Execute
+                locators:
+                  - leftof:
+                      object: html.label
+                      properties:
+                        - content:
+                            - val: Execution results
+  - with:
+      note: DevOps Test Hub - TestProject - Execution
+      steps:
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_vkqtsq.dti.jpeg#1414
+            object: html.button
+            identifiers:
+              - properties:
+                  - aria-label:
+                      - val: 'Open execution dialog for: Register Users and Add Address'
+                locators:
+                  - inside:
+                      object: html.td
+                      properties:
+                        - position:
+                            - val: '7 : 7'
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_4eb6fi.dti.jpeg#1930
+            object: html.span
+            identifiers:
+              - properties:
+                  - content:
+                      - val: DATA SOURCES
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_ef52vw.dti.jpeg#2493
+            object: html.span
+            identifiers:
+              - properties:
+                  - content:
+                      - val: No override
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_wfx7ff.dti.jpeg#3071
+            object: html.span
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Emerald-UI-Tests/Data/User.ddf
+        - click:
+            enabled: 'false'
+            shot: DevOps Test Hub - TestProject - Execution_ynszbb.dti.jpeg#3589
+            object: html.path
+            identifiers:
+              - properties:
+                  - tagName:
+                      - val: path
+                locators:
+                  - below:
+                      object: html.li
+                      properties:
+                        - content:
+                            - val: VARIABLES
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_jjkwwb.dti.jpeg#4133
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Number of rows
+        - type:
+            shot: DevOps Test Hub - TestProject - Execution_iyioji.dti.jpeg#4699
+            object: html.inputtext
+            identifiers:
+              - properties:
+                  - label:
+                      - val: Number of rows
+            value: '${Number_of_rows}'
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_427iyi.dti.jpeg#5852
+            object: html.span
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Set
+        - pause: 20000ms
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_tpigkb.dti.jpeg#6449
+            object: html.span
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Execute
+        - do:
+            steps:
+              - pause: 2000ms
+              - assign:
+                  shot: DevOps Test Hub - TestProject - Execution_hhuzxt.dti.jpeg#6557
+                  object: html.td
+                  identifiers:
+                    - properties:
+                        - position:
+                            - val: '6 : 7'
+                  properties:
+                    - content:
+                        - var: Done
+            while: Done != '-'
+        - click:
+            shot: DevOps Test Hub - TestProject - Execution_hhuzxt.dti.jpeg#6557
+            object: html.div
+            identifiers:
+              - properties:
+                  - content:
+                      - val: Analyze
+                locators:
+                  - leftof:
+                      object: html.td
+                      properties:
+                        - position:
+                            - val: '1 : 7'
+  - with:
+      note: DevOps Test Hub - TestProject - Results
+      steps:
+        - click:
+            shot: DevOps Test Hub - TestProject - Results_mypogg.dti.jpeg#6885
+            object: html.img
+            identifiers:
+              - properties:
+                  - src:
+                      - val: content/images/banner-brand-icon-3.svg
