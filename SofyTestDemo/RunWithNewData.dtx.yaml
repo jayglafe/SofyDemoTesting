@@ -327,13 +327,13 @@ steps:
                           Emerald-UI-Tests/Users3.csv
         - click:
             shot: DevOps Test Hub - TestProject - Execution_vmrh6v.dti.jpeg#13210
-            object: scroll
+            object: html.li
             identifiers:
               - properties:
                   - content:
                       - val: |-
                           Users3
-                          Emerald-UI-Tests/Users3.csv
+                          B2C_913/Users3.csv
         - click:
             shot: DevOps Test Hub - TestProject - Execution_3n2h4a.dti.jpeg#13682
             object: html.span

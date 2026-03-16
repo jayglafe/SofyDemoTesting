@@ -113,11 +113,19 @@ steps:
                       - val: DATA SOURCES
         - click:
             shot: DevOps Test Hub - TestProject - Execution_ef52vw.dti.jpeg#2493
-            object: html.span
+            object: html.path
             identifiers:
               - properties:
-                  - content:
-                      - val: No override
+                  - tagName:
+                      - val: path
+                locators:
+                  - inside:
+                      object: html.td
+                      properties:
+                        - content:
+                            - val: |-
+                                No override
+                                No override
         - click:
             shot: DevOps Test Hub - TestProject - Execution_wfx7ff.dti.jpeg#3071
             object: html.span
