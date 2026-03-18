@@ -3,12 +3,12 @@ configuration:
   vars:
     gPrometheusIp: ''
     gPrometheusPort: ''
-    gCommerceHostname: commerce-preview.sbx0054.play.hclsofy.dev
+    gCommerceHostname: commerce-preview.sbx0102.play.hclsofy.dev
     gCommercePort: '443'
-    gTestHubHostname: testhub.sbx0054.play.hclsofy.dev
-    gConsoleHostname: sofy-console.sbx0054.play.hclsofy.dev
-    gConsolePassword: kjdR0UA8aq
-    gTestHubPassword: fe251c0243c33efa23f5d12930d7a0c1a97ce707354e9013f37f1855cb4f6955
+    gTestHubHostname: testhub.sbx0102.play.hclsofy.dev
+    gConsoleHostname: sofy-console.sbx0102.play.hclsofy.dev
+    gConsolePassword: qy7F9gQG6h
+    gTestHubPassword: c43019c433c63196fc2f233ac9fb8f9bdccbcf1185ecde6cb97bd40a38787d42
     githubUser: jayglafe
 steps:
   - run:

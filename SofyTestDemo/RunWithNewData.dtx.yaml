@@ -60,6 +60,13 @@ steps:
       steps:
         - click:
             shot: DevOps Test Hub - Initial - Team Space Dashboard_l452gx.dti.jpeg#162
+            object: html.img
+            identifiers:
+              - properties:
+                  - src:
+                      - val: content/images/banner-brand-icon-3.svg
+        - click:
+            shot: DevOps Test Hub - Initial - Team Space Dashboard_l452gx.dti.jpeg#162
             object: html.div
             identifiers:
               - properties:
@@ -127,7 +134,7 @@ steps:
               - properties:
                   - content:
                       - val: New
-        - pause: 500ms
+        - wait: 500ms
         - click:
             shot: DevOps Test Hub - TestProject - Data_tngsck.dti.jpeg#2090
             object: html.a
@@ -233,7 +240,7 @@ steps:
               - properties:
                   - content:
                       - val: Fabricate data
-        - pause: 2000ms
+        - wait: 2000ms
         - click:
             shot: DevOps Test Hub - TestProject - Data_6hfwt6.dti.jpeg#7885
             object: html.path
@@ -276,7 +283,7 @@ steps:
               - properties:
                   - content:
                       - val: Create
-        - pause: 7000ms
+        - wait: 7000ms
         - click:
             shot: DevOps Test Hub - TestProject - Data_lzeg3p.dti.jpeg#10061
             object: html.div
@@ -350,7 +357,7 @@ steps:
                       - val: Execute
         - do:
             steps:
-              - pause: 10000ms
+              - wait: 10000ms
               - assign:
                   shot: DevOps Test Hub - TestProject - Execution_rikih7.dti.jpeg#14733
                   object: html.td

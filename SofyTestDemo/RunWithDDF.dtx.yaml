@@ -113,19 +113,17 @@ steps:
                       - val: DATA SOURCES
         - click:
             shot: DevOps Test Hub - TestProject - Execution_ef52vw.dti.jpeg#2493
-            object: html.path
+            object: html.svg
             identifiers:
               - properties:
                   - tagName:
-                      - val: path
+                      - val: svg
                 locators:
-                  - inside:
-                      object: html.td
+                  - below:
+                      object: html.th
                       properties:
                         - content:
-                            - val: |-
-                                No override
-                                No override
+                            - val: Override
         - click:
             shot: DevOps Test Hub - TestProject - Execution_wfx7ff.dti.jpeg#3071
             object: html.span
@@ -169,7 +167,7 @@ steps:
               - properties:
                   - content:
                       - val: Set
-        - pause: 20000ms
+        - wait: 20000ms
         - click:
             shot: DevOps Test Hub - TestProject - Execution_tpigkb.dti.jpeg#6449
             object: html.span
@@ -179,7 +177,7 @@ steps:
                       - val: Execute
         - do:
             steps:
-              - pause: 2000ms
+              - wait: 2000ms
               - assign:
                   shot: DevOps Test Hub - TestProject - Execution_hhuzxt.dti.jpeg#6557
                   object: html.td
