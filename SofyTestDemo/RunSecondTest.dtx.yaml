@@ -12,9 +12,11 @@ configuration:
     Done: Uninitialized
 steps:
   - open:
+      enabled: 'false'
       note: Open SofyTestDemo
       url: '${APP_SofyTestDemo_URL}'
   - with:
+      enabled: 'false'
       note: Sign in to platform
       steps:
         - click:
@@ -75,6 +77,7 @@ steps:
       note: DevOps Test Hub - 2350 - Overview
       steps:
         - click:
+            enabled: 'false'
             shot: DevOps Test Hub - 2350 - Overview_necij2.dti.jpeg#318
             object: html.div
             identifiers:
@@ -82,6 +85,7 @@ steps:
                   - content:
                       - val: Demo
         - click:
+            enabled: 'false'
             shot: DevOps Test Hub - 2350 - Overview_a7lhnh.dti.jpeg#724
             object: html.p
             identifiers:
@@ -215,7 +219,7 @@ steps:
                       - val: Execute
         - do:
             steps:
-              - pause: 3000ms
+              - wait: 3000ms
               - assign:
                   shot: DevOps Test Hub - TestProject - Execution_vtnzzz.dti.jpeg#6901
                   object: html.td
