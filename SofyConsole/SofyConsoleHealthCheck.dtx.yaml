@@ -1,15 +1,26 @@
 note: Generated from recorded traffic using edge 145.0.3800.70
 configuration:
+  dataset: asset://github.com%2Fjayglafe%2FSofyDemoTesting/SofyTestDemo/Valuess.csv
   profile: edge
   vars:
-    APP_SofyConsole_URL: https://sofy-console.sbx0276.play.hclsofy.dev
-    Username_or_email: sol-admin
-    Password: UJA1j3HRm2
+    APP_SofyConsole_URL:
+      expr: gConsoleUrl
+      type: column
+    Username_or_email:
+      expr: sol-admin
+      type: val
+      modifier: in
+    Password:
+      expr: gConsolePassword
+      type: column
+      modifier: in
     PrometheusPort:
       expr: '80'
+      type: val
       modifier: out
     PrometheusIp:
       expr: ''
+      type: val
       modifier: out
 steps:
   - open:
@@ -23,101 +34,86 @@ steps:
             object: html.inputtext
             identifiers:
               - properties:
-                  - label:
-                      - val: Username or email
+                  - label: Username or email
             value: '${Username_or_email}'
         - click:
             shot: Sign in to access-control-service_a5waxc.dti.jpeg#154
             object: html.inputpassword
             identifiers:
               - properties:
-                  - label:
-                      - val: Password
+                  - label: Password
         - type:
             shot: Sign in to access-control-service_2qyvqi.dti.jpeg#198
             object: html.inputpassword
             identifiers:
               - properties:
-                  - label:
-                      - val: Password
+                  - label: Password
             value: '${Password}'
         - click:
             shot: Sign in to access-control-service_2hrvqk.dti.jpeg#296
             object: html.i
             identifiers:
               - properties:
-                  - xpath:
-                      - val: //form[@id='kc-form-login']/div[2]/div[2]/div[2]/button/i
+                  - xpath: //form[@id='kc-form-login']/div[2]/div[2]/div[2]/button/i
                 locators:
                   - below:
                       object: html.inputtext
                       properties:
-                        - label:
-                            - val: Username or email
+                        - label: Username or email
         - click:
             shot: Sign in to access-control-service_2hrvqk-1773053542621.dti.jpeg
             object: html.button
             identifiers:
               - properties:
-                  - content:
-                      - val: Sign In
+                  - content: Sign In
   - with:
       note: Sandbox Admin
       steps:
         - click:
             shot: Sandbox Admin_a4phlm.dti.jpeg#146
-            object: html.custom
+            object: html.div
             identifiers:
               - properties:
-                  - xpath:
-                      - val: //div[@id='btn-health-status']/div/mat-icon
+                  - id: btn-health-status
                 locators:
                   - above:
                       object: html.div
                       properties:
-                        - content:
-                            - val: 'Helm Chart : v0.1.36'
+                        - content: 'Helm Chart : v0.1.37'
         - click:
             shot: Sandbox Admin_g57c3q.dti.jpeg#2509
             object: html.span
             identifiers:
               - properties:
-                  - content:
-                      - val: READY
+                  - content: READY
             use: double_click
         - click:
             shot: Sandbox Admin_h4nx2l.dti.jpeg#3301
             object: html.custom
             identifiers:
               - properties:
-                  - xpath:
-                      - val: //mat-icon[@id='pods-dialog-close']
+                  - xpath: //mat-icon[@id='pods-dialog-close']
                 locators:
                   - above:
                       object: html.th
                       properties:
-                        - content:
-                            - val: ACTION
+                        - content: ACTION
         - verify:
             enabled: 'false'
             shot: Sandbox Admin_tbca3s.dti.jpeg#3896
             object: html.span
             identifiers:
               - properties:
-                  - content:
-                      - val: '46'
+                  - content: '46'
             properties:
-              - content:
-                  - val: '46'
+              - content: '46'
         - click:
             shot: Sandbox Admin_tbca3s.dti.jpeg#3896
             object: html.span
             identifiers:
               - properties:
-                  - class:
-                      - val: number
-                  - xpath:
-                      - val: //div[@id='btn-pods']/div/div[2]/div[2]/div/span
+                  - class: number
+                  - xpath: //div[@id='btn-pods']/div/div[2]/div[2]/div/span
   - with:
       note: Sandbox Admin
       steps:
@@ -126,19 +122,17 @@ steps:
             object: html.span
             identifiers:
               - properties:
-                  - content:
-                      - val: Services
+                  - content: Services
   - with:
       note: Sandbox Admin
       steps:
-        - pause: 5000ms
+        - wait: 5000ms
         - assign:
             shot: Sandbox Admin_m54jc6.dti.jpeg#7571
             object: html.body
             identifiers:
               - properties:
-                  - title:
-                      - val: Sandbox Admin
+                  - title: Sandbox Admin
             properties:
               - content:
                   - var:
@@ -149,8 +143,7 @@ steps:
             object: html.body
             identifiers:
               - properties:
-                  - title:
-                      - val: Sandbox Admin
+                  - title: Sandbox Admin
             properties:
               - content:
                   - var:

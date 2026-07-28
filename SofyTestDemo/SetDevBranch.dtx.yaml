@@ -1,16 +1,15 @@
 note: Generated from recorded traffic using edge 145.0.3800.82
 configuration:
+  dataset: Valuess.csv
   profile: edge
   vars:
+    pp:
+      expr: gTestHubPassword
+      type: column
     APP_SofyTestDemo_URL:
-      expr: https://testhub.sbx0276.play.hclsofy.dev/test/
-      type: val
-      modifier: in
-    Username:
-      expr: demo.user
-      type: val
-      modifier: in
-    Password: 6114e1acb8ae610dcb6802a85da366d9d9b4a4c2c21d8aa36587470c5822e2d1
+      expr: gTestHubUrl
+      type: column
+    Username: demo.user
 steps:
   - open:
       enabled: 'false'
@@ -25,38 +24,35 @@ steps:
             object: html.inputtext
             identifiers:
               - properties:
-                  - label:
-                      - val: Username
+                  - label: Username
         - type:
             shot: Sign in to platform_aidd65.dti.jpeg#86
             object: html.inputtext
             identifiers:
               - properties:
-                  - label:
-                      - val: Username
+                  - label: Username
             value: '${Username}'
         - click:
             shot: Sign in to platform_3xgpep.dti.jpeg#165
             object: html.inputpassword
             identifiers:
               - properties:
-                  - label:
-                      - val: Password
+                  - label: Password
         - type:
             shot: Sign in to platform_yesylp.dti.jpeg#203
             object: html.inputpassword
             identifiers:
               - properties:
-                  - label:
-                      - val: Password
-            value: '${Password}'
+                  - label: Password
+            value: '${pp}'
+        - wait: 5000ms
         - click:
             shot: Sign in to platform_3bepfu.dti.jpeg#286
             object: html.button
             identifiers:
               - properties:
-                  - content:
-                      - val: Sign In
+                  - content: Sign In
+        - wait: 5000ms
   - with:
       note: DevOps Test Hub - Initial - Team Space Dashboard
       steps:
@@ -65,29 +61,32 @@ steps:
             object: html.img
             identifiers:
               - properties:
-                  - src:
-                      - val: content/images/banner-brand-icon-3.svg
+                  - src: content/images/banner-brand-icon-3.svg
         - click:
             shot: DevOps Test Hub - Initial - Team Space Dashboard_pwzx5w.dti.jpeg#323
             object: html.span
             identifiers:
               - properties:
-                  - content:
-                      - val: TestProject
+                  - content: TestProject
   - with:
       note: DevOps Test Hub - 1550 - Overview
       steps:
+        - wait: 5000ms
         - click:
             shot: DevOps Test Hub - 1550 - Overview_tpdyso.dti.jpeg#492
-            object: html.path
+            object: html.div
             identifiers:
               - properties:
-                  - tagName:
-                      - val: path
+                  - content: Execute
+        - click:
+            shot: DevOps Test Hub - 1550 - Overview_tpdyso.dti.jpeg#492
+            object: html.p
+            identifiers:
+              - properties:
+                  - content: Demo
         - click:
             shot: DevOps Test Hub - 1550 - Overview_haqqu2.dti.jpeg#901
             object: html.p
             identifiers:
               - properties:
-                  - content:
-                      - val: DEV
+                  - content: DEV

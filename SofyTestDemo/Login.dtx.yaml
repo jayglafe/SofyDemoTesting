@@ -1,16 +1,20 @@
 note: Generated from recorded traffic using edge 145.0.3800.70
 configuration:
+  dataset: Valuess.csv
   profile: edge
   vars:
     APP_SofyTestDemo_URL:
-      expr: https://testhub.sbx0276.play.hclsofy.dev/test/
-      type: val
+      expr: gTestHubUrl
+      type: column
       modifier: in
     Username:
       expr: demo.user
       type: val
       modifier: in
-    Password: 6114e1acb8ae610dcb6802a85da366d9d9b4a4c2c21d8aa36587470c5822e2d1
+    Password:
+      expr: gTestHubPassword
+      type: column
+      modifier: in
     LiContract:
       expr: 'false'
       type: val
@@ -27,49 +31,44 @@ steps:
             object: html.inputtext
             identifiers:
               - properties:
-                  - label:
-                      - val: Username
+                  - label: Username
         - type:
             shot: Sign in to platform_kkkiwe.dti.jpeg#86
             object: html.inputtext
             identifiers:
               - properties:
-                  - label:
-                      - val: Username
+                  - label: Username
             value: '${Username}'
         - click:
             shot: Sign in to platform_ikn3xu.dti.jpeg#165
             object: html.inputpassword
             identifiers:
               - properties:
-                  - label:
-                      - val: Password
+                  - label: Password
         - type:
             shot: Sign in to platform_yk6brw.dti.jpeg#203
             object: html.inputpassword
             identifiers:
               - properties:
-                  - label:
-                      - val: Password
+                  - label: Password
             value: '${Password}'
+        - wait: 1000ms
         - click:
             shot: Sign in to platform_d7bobt.dti.jpeg#286
             object: html.button
             identifiers:
               - properties:
-                  - content:
-                      - val: Sign In
+                  - content: Sign In
   - with:
       note: DevOps Test Hub - Initial - Team Space Dashboard
       steps:
-        - pause: 10000ms
+        - wait: 10000ms
         - assign:
             shot: DevOps Test Hub - Initial - Team Space Dashboard_jmiav4.dti.jpeg#354
             object: html.body
             identifiers:
               - properties:
-                  - title:
-                      - val: DevOps Test Hub - Initial - Team Space Dashboard
+                  - title: DevOps Test Hub - Initial - Team Space Dashboard
             properties:
               - content:
                   - var: LiContract
@@ -81,20 +80,17 @@ steps:
                   object: html.inputcheckbox
                   identifiers:
                     - properties:
-                        - label:
-                            - val: Google ChromeGoogle Terms of ServiceChrome and
-                                ChromeOS Additional Terms of Service
+                        - label: Google ChromeGoogle Terms of ServiceChrome and ChromeOS
+                            Additional Terms of Service
               - click:
                   shot: DevOps Test Hub - Initial - Team Space Dashboard_jmiav4.dti.jpeg#354
                   object: html.inputcheckbox
                   identifiers:
                     - properties:
-                        - label:
-                            - val: Microsoft EdgeMicrosoft Software License Terms
+                        - label: Microsoft EdgeMicrosoft Software License Terms
               - click:
                   shot: DevOps Test Hub - Initial - Team Space Dashboard_k6y4aa.dti.jpeg#545
                   object: html.span
                   identifiers:
                     - properties:
-                        - content:
-                            - val: Save
+                        - content: Save
