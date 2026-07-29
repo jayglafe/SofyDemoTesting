@@ -12,7 +12,7 @@ configuration:
     Username: demo.user
     Branch_Name: xEditBranch
     Name: Users3
-    Number_of_Rows: '5'
+    Number_of_Rows: '3'
     Done: ''
 steps:
   - open:

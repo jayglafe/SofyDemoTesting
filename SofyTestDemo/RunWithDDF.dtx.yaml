@@ -10,7 +10,7 @@ configuration:
       expr: gTestHubUrl
       type: column
     Username: demo.user
-    Number_of_rows: '10'
+    Number_of_rows: '3'
     Done: ''
 steps:
   - open:
